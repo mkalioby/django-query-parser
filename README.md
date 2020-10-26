@@ -7,5 +7,5 @@ Some queries are controlled by the bussiness case, so it will be benefical if th
 ## Sample
 
 ```json
-{"test":{"status_id" : 3, name__icontains:"Ahmed"}}
+{"test":{"status_id" : 3, "name__icontains":"Ahmed"}}
 ```
