@@ -1,0 +1,13 @@
+[run]
+omit = */env*
+	test_app/*
+	manage.py
+
+[report]
+omit = */env*
+	test_app/*
+	manage.py
+
+
+[json]
+output=coverage.json

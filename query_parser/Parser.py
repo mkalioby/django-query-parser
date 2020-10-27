@@ -6,14 +6,20 @@ from functools import reduce
 def parse_or(queries):
     or_queries = []
     for k,v in queries.items():
-        or_queries.append(Q(**{k: v}))
+        if '~' in k:
+            or_queries.append(~Q(**{k[1:]: v}))
+        else:
+            or_queries.append(Q(**{k: v}))
     return reduce(operator.or_, or_queries)
 
 
 def parse_and(queries):
     and_queries = []
     for k, v in queries.items():
-        and_queries.append(Q(**{k: v}))
+        if "~" in k:
+            and_queries.append(~Q(**{k[1:]: v}))
+        else:
+            and_queries.append(Q(**{k: v}))
     return Q(reduce(operator.and_, and_queries))
 
 

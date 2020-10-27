@@ -4,21 +4,21 @@ from setuptools import find_packages, setup
 
 setup(
     name='django-query-parser',
-    version='0.0.1',
+    version='0.0.3',
     description='A django app to store and load partial queries from external  sources',
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
 
     author='Mohamed El-Kalioby',
     author_email = 'mkalioby@mkalioby.com',
-    url = 'https://github.com/mkalioby/django-mfa2/',
+    url = 'https://github.com/mkalioby/django-query-parser/',
     download_url='https://github.com/mkalioby/django-query-parser/',
     license='MIT',
-    packages=find_packages(),
+    packages=find_packages('.','test_app'),
     install_requires=[],
     python_requires=">=3.5",
     include_package_data=True,
-      zip_safe=True, # because we're including static files
+    zip_safe=True, # because we're including static files
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Environment :: Web Environment",
