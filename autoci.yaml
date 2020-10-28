@@ -3,7 +3,7 @@ tasks:
 events:
   beforeRun:
      - location: rm -rf $work_dir/env;
-     - location: virtual-env --python python3.7 env;
+     - location: virtualenv --python python3.8 env;
      - location: source env/bin/activate; pip install -r requirments.txt
   afterRun:
      - location: source env/bin/activate; python show-coverage.py
